@@ -114,34 +114,34 @@ y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
   0 si no está ordenado, y -1 si está ordenado en orden descendente.
 */
 int checkSorted(int arr[], int size) { 
-  
-  int ascendente = 1; 
-  int descendente = 1;
 
+  int asc_sorted = 1; // Variable para indicar si el arreglo está ordenado de manera ascendente
+  int desc_sorted = 1; // Variable para indicar si el arreglo está ordenado de manera descendente
 
-  for(int i = 1; i < size; i++){
-      if(arr[i - 1] > arr[i]){
-          ascendente = 0;
+  // Comprobación de orden ascendente
+  for (int i = 1; i < size; i++) {
+      if (arr[i - 1] > arr[i]) {
+          asc_sorted = 0;
           break;
       }
   }
 
-  for(int i = 1; i < size; i++){
-      if(arr[i - 1] < arr[i]){
-          descendente = 0;
+  // Comprobación de orden descendente
+  for (int i = 1; i < size; i++) {
+      if (arr[i - 1] < arr[i]) {
+          desc_sorted = 0;
           break;
       }
   }
 
-  if(ascendente && descendente){
-      return -1; 
-  }else if (ascendente){
-      return 1; 
-  }else{
-      return 0; 
+  // Devolver el resultado basado en las comprobaciones
+  if (asc_sorted && desc_sorted) {
+      return -1; // Está ordenado en orden descendente
+  } else if (asc_sorted) {
+      return 1; // Está ordenado en orden ascendente
+  } else {
+      return 0; // No está ordenado
   }
-  
-  
   
   return -2; }
 
