@@ -115,8 +115,8 @@ y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
 */
 int checkSorted(int arr[], int size) { 
   
-  int ascendente = 12345; 
-  int descendente = 54321;
+  int ascendente = 1; 
+  int descendente = 1;
 
 
   for(int i = 1; i < size; i++){
